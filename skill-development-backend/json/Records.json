@@ -1,0 +1,59 @@
+[
+    {
+        "id":1,
+        "nav":"Homes",
+        "submenu":[
+            {
+                "subnav": "Home1"
+
+            },
+            {
+                "subnav": "Home2"
+
+            }
+        ]
+        
+    },
+    {
+        "id":1,
+        "nav":"contact",
+        "submenu":[
+            {
+                "subnav": "Home1"
+
+            },
+            {
+                "subnav": "Home2"
+
+            }
+        ]
+        
+    },
+    {
+        "id":2,
+        "nav":"Service",
+        "submenu":[
+            {
+                "subnav":"Service1"
+            }
+        ]
+        
+    },
+    {
+        "id":3,
+        "nav":"Contact",
+        "submenu":[
+            {
+                "subnav":"Contact1"
+            }
+        ]
+        
+    },
+    {
+        "id":3,
+        "nav":"Portfolio"
+        
+        
+    }
+
+]
