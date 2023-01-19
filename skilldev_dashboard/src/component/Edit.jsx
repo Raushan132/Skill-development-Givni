@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 // import Select from 'react-dropdown-select';
-import { NavLink } from "react-router-dom";
-import axios from 'axios'
+// import { NavLink } from "react-router-dom";
+import Axios from 'axios';
 
 const Edit = () => {
+
+    
+
+
+
 
     // const options = [
     //     {
@@ -20,17 +25,17 @@ const Edit = () => {
     //     }
     // ];
 
-    const [home, setHome] = useState([]);
+    // const [home, setHome] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://192.168.1.12:8081/api/header').then((result) => {
-            console.log(result.data)
-            setHome(result.data)
-        }).catch((err) => {
+    // useEffect(() => {
+    //     axios.get('http://192.168.1.12:8081/api/header').then((result) => {
+    //         console.log(result.data)
+    //         setHome(result.data)
+    //     }).catch((err) => {
 
-        });
+    //     });
 
-    }, [])
+    // }, [])
 
     return (
 
@@ -39,30 +44,35 @@ const Edit = () => {
             <div>
                 {/* use map here */}
 
-                {
+
+
+              
+
+
+
+
+
+                {/* {
 
                     home.map((navbar) => {
                         return (
                             <>
                             <div className='flex'>
                             <h3>{navbar.nav}</h3>
-                                <ul className='flex gap-4 list-none'>
+                                <ul className='flex gap-4'>
                                 {
                             navbar.submenu?.map((subnav) => {
                                 return (
-                                    <li >  {subnav.subnav} </li>
+                                    <li > {subnav.subnav} </li>
                                 )
                             })}
                                 </ul>
-                            </div>
-                            
-
-
-                                
+                            </div>      
                             </>
                         )
                     })
-                }
+                } */}
+
                 {/* <div className='px-16 py-2 mt-10 mx-10 '>
                     <button className='rounded-md bg-green-500 hover:bg-green-600 hover:scale-x-110 hover:duration-75 px-5 py-2 m-2 text-white' id="">Add</button>
 
@@ -77,6 +87,8 @@ const Edit = () => {
                         </tr>
                     </table>
                 </div> */}
+
+
 
             </div>
         </div>
