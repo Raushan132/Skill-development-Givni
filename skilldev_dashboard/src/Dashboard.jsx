@@ -1,5 +1,6 @@
 import React from 'react'
 import Edit from './component/Edit'
+// import Form from './component/Form'
 import Sidebar from './component/Sidebar'
 import { Routes, Route } from 'react-router-dom'
 import EditDetails from './component/EditDetails'
