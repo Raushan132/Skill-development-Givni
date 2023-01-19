@@ -1,8 +1,7 @@
 import React from 'react'
 import Edit from './component/Edit'
+// import Form from './component/Form'
 import Sidebar from './component/Sidebar'
-
-
 
 const Dashboard = () => {
     return (
@@ -11,9 +10,10 @@ const Dashboard = () => {
                 <div className='flex w-full gap-8'>
                     <Sidebar />
                     <Edit />
+                    {/* <Form/> */}
                 </div>
             </div>
         </>
     )
 }
-export default Dashboard
+export default Dashboard;
