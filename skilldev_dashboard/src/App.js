@@ -1,12 +1,12 @@
-// import Dashboard from './Dashboard';
+import Dashboard from './Dashboard';
 import './App.css';
 import Form from './component/Form';
 
 function App() {
   return (
     <div className="App">
-      {/* <Dashboard/> */}
-      <Form/>
+      <Dashboard/>
+      {/* <Form/> */}
     </div>
   );
 }
