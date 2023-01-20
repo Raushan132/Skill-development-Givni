@@ -29,7 +29,7 @@ const Form = () => {
     const handleAdd = (e) => {
         e.preventDefault();
         console.log(data);
-        Axios.post(url, { menu: data.menu, submenu: [{ nav:""}] }).then(res => { console.log(res.data); }).catch(err => { console.log('unsuccess'); })
+        Axios.post(url, { nav: data.menu, submenu: [{ nav:""}] }).then(res => { console.log(res.data); }).catch(err => { console.log('unsuccess'); })
     }
 
 
