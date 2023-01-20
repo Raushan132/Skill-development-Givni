@@ -89,19 +89,32 @@ const EditNavDetails = () => {
 
 
 
-  const handleUpdate = (e) => {
+  const handleUpdate = async (e) => {
     // e.preventDefault();
-    // e.preventDefault();
+    e.preventDefault();
+    try {
+      await axios.put(`http://192.168.1.12:8082/updateData/${_id}`, navItem)
+        .then(res => console.log("put", res.data));
+      setNavData(navData.map(item => item._id === _id ? navItem : item));
+    }
+    catch (err) {
+      console.log(err)
+    }
 
-    setNavData(navData.map(item => item._id === _id ? navItem : item));
-    console.log(navItem);
-    // let puturl = `http://192.168.1.12:8082/updateData/${_id}`
-    // console.log()
-    // axios.put(puturl, navItem);
-    console.log(_id)
-    axios.put(`http://192.168.1.12:8082/updateData/${_id}`, navItem)
-      .then(res => console.log("put", res.data));
+  }
 
+  const removeSubnav = (index) => {
+    setNavItem({
+      ...navItem,
+      submenu: navItem.submenu.filter((sub, i) => i !== index)
+    });
+  }
+
+  const addSubnav = () => {
+    setNavItem({
+      ...navItem,
+      submenu: [...navItem.submenu, { subnav: '' }]
+    });
   }
 
 
@@ -110,7 +123,7 @@ const EditNavDetails = () => {
   return (
     <div>
 
-      <form>
+      <form onSubmit={handleUpdate}>
 
         <label>Nav:</label>
         <input type="text" value={navItem.nav} onChange={(e) => setNavItem({
@@ -123,11 +136,13 @@ const EditNavDetails = () => {
           <div key={index}>
             <label>Subnav {index + 1}:</label>
             <input type="text" value={subnav.subnav} onChange={(e) => setNavItem({ ...navItem, submenu: navItem.submenu.map((sub, i) => i === index ? { ...sub, subnav: e.target.value } : sub) })} />
+            <button onClick={() => removeSubnav(index)}>Remove</button>
           </div>
         ))}
-        <input type="button" onClick={() => handleUpdate()} value="Update" />
-      </form>
-    </div>
+        <button onClick={addSubnav}>Add Subnav</button>
+        <button type="submit"> Update </button>
+      </form >
+    </div >
   )
 }
 
