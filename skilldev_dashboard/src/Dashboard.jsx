@@ -1,10 +1,10 @@
 import React from 'react'
-import Edit from './component/Edit'
+// import Edit from './component/Header'
 // import Form from './component/Form'
 import Sidebar from './component/Sidebar'
 import { Routes, Route } from 'react-router-dom'
-import EditDetails from './component/EditDetails'
-import NavPages from './pages/NavPages'
+import EditNavDetails from './component/EditNavDetails'
+import NavPage from './pages/NavPage'
 
 
 
@@ -15,10 +15,11 @@ const Dashboard = () => {
                 <div className='flex w-full gap-8'>
                     <Sidebar />
                     <Routes>
-                        <Route to='/edit' element={<NavPages />} />
-                        <Route to='/edit:_id' element={<EditDetails />} />
+                        <Route path='/navpage' element={<NavPage />} />
+                        <Route path='navpage/Edit/:_id' element={<EditNavDetails />} />
+
                     </Routes>
-                    
+
                 </div>
             </div>
         </>
