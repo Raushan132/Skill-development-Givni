@@ -71,6 +71,7 @@ const EditNavDetails = () => {
             <input type="text" value={subnav.subnav} onChange={(e) => setNavItem({ ...navItem, submenu: navItem.submenu.map((sub, i) => i === index ? { ...sub, subnav: e.target.value } : sub) })} />
           </div>
         ))}
+
         <button onClick={() => setNavData(navData.map(item => item._id === _id ? navItem : item))}>Update</button>
       </form>
     </div>
