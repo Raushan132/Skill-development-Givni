@@ -1,0 +1,29 @@
+[
+    {
+        "_id": 12,
+        "nav": "Home",
+        "submenu": [
+            {
+                "subnav": "Home1"
+            },
+            {
+                "subnav": "Home2"
+            }
+        ]
+    },
+    {
+        "_id": 13,
+        "nav": "About",
+        "submenu": [
+            {
+                "subnav": "About1"
+            },
+            {
+                "subnav": "About2"
+            },
+            {
+                "subnav": "About3"
+            }
+        ]
+    }
+]
