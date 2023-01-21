@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import { ImCross } from 'react-icons/im';
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const PopupForm = () => {
 
     // sending data to this url
-    const url = 'http://192.168.1.12:8081/setheader'
+    const url = 'http://192.168.1.21:8084/addNav';
 
     // adding data function
     const [data, setData] = useState({ menu: '' })
@@ -22,7 +22,11 @@ const PopupForm = () => {
     const handleAdd = (e) => {
         e.preventDefault();
         console.log(data);
-        Axios.post(url, { nav: data.menu, submenu: [{ nav: "" }] }).then(res => { console.log(res.data); }).catch(err => { console.log('unsuccess'); })
+        
+        Axios.post(url, { nav: data.menu, submenu: [{ subnav: "" }] }).then(res => { 
+            console.log(res.data);
+            message(res.data) 
+        }).catch(err => { console.log('unsuccess'); })
     }
 
     // useEffect(() => {
@@ -39,11 +43,19 @@ const PopupForm = () => {
 
 
     /* message */
-    const message = () => {
+    const message = (Test) => {
         // alert('Data added successfully!');
-        toast.success('Data added successfully!', {
-            position: "top-center"
-        });
+        if(Test){
+            // console.log('here');
+            toast.success('Data added successfully!', {
+                position: "top-center"
+            });
+        }else{
+            toast.error('Data Not added!', {
+                position: "top-center"
+            });
+        }
+        
     }
 
     return (
@@ -64,7 +76,7 @@ const PopupForm = () => {
                             </div>
 
                             <div className="flex items-center justify-between">
-                                <button onClick={message} className='text-xl w-full bg-green-400 hover:bg-green-500 text-white font-bold py-1 px-3 rounded focus:outline-none focus:shadow-outline hover:scale-105 hover:duration-75'>Add</button>
+                                <button  className='text-xl w-full bg-green-400 hover:bg-green-500 text-white font-bold py-1 px-3 rounded focus:outline-none focus:shadow-outline hover:scale-105 hover:duration-75'>Add</button>
                             </div>
                         </form>
                     </div>
