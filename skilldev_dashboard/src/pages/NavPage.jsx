@@ -20,7 +20,7 @@ const NavPages = () => {
 
     // console.log(data)
     return (
-        <div className='flex text-center flex-col py-12 bg-blue-200 w-full'>
+        <div className='flex text-center flex-col py-12 bg-blue-200 w-full ml-28'>
             <HeadTitle head="Nav" />
 
             <div className='px-16 py-2 mt-10 mx-10 flex flex-col '>
@@ -37,17 +37,17 @@ const NavPages = () => {
                                 <div className='flex flex-col bg-gray-300' key={navbar._id}>
                                     <div className='flex flex-col gap-2'>
                                         <div className='flex'>
-                                            <Link to={"Edit/" + navbar._id} className='rounded-md bg-red-500 hover:bg-green-600 hover:scale-x-110 hover:duration-75 px-5 py-2 m-2 text-white'> Edit </Link>
+                                            <Link to={"Edit/" + navbar._id} className='rounded-md bg-red-500 hover:bg-red-700 hover:scale-x-110 hover:duration-75 px-4 py-1 m-2 text-white'> Edit </Link>
                                         </div>
-                                        <div className=''>
-                                            <h3> {navbar.nav}</h3>
+                                        <div className='flex flex-col gap-2'>
+                                            <h3 className='text-left px-2 py-2 bg-gradient-to-r from-green-300 font-bold'> {navbar.nav}</h3>
 
-                                            <ul className='pl-16 pb-12'>
+                                            <ul className='flex flex-col px-12 text-left pb-12 gap-2'>
                                                 {
 
                                                     navbar.submenu?.map((child) => {
                                                         return (
-                                                            <li>{child.subnav}</li>
+                                                            <li className='text-white bg-gradient-to-r from-indigo-500 px-2'>{child.subnav}</li>
                                                         )
                                                     })
                                                 }
