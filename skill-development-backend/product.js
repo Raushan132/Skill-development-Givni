@@ -11,8 +11,14 @@ app.use(express.json())
 
 app.get("/getTest",async (req,res)=>{
       let data= await product.find();
+      console.log("getting data...")
       res.send(data);
       
+})
+
+app.get("/test/:id",(req,res)=>{
+     console.log("testing data"+req.params.id);
+     res.send("update");
 })
 
 app.post("/addNav", async (req,res)=>{
@@ -22,13 +28,13 @@ app.post("/addNav", async (req,res)=>{
 })
 
 app.put("/updateData/:id", async (req,res)=>{
-        console.log(typeof req.body[0].nav);
+        console.log("getting data from rajeev"+req.params.id);
          let data = await product.updateOne(
             {_id: mongoObj.ObjectId(req.params.id)},
             {
                 $set:{
-                     "nav": req.body[0].nav,
-                    submenu:req.body[0].submenu
+                     "nav": req.body.nav,
+                    submenu:req.body.submenu
                     }
             }
          )

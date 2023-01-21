@@ -31,7 +31,18 @@ app.get("/api/home2",async (req,res)=>{
 app.get("/getheader",async (req,res)=>{
      let data= await dbCon('test')
      let email= await data.find().toArray()
+     console.log("sending data")
      res.json(email)
+})
+
+app.get("/getheaderid/:id",async (req,res)=>{
+    
+    console.log(req.params.id)
+     let data= await dbCon('test')
+      data= await data.find({_id:ObjectId.ObjectId(req.params.id)}).toArray()
+     res.json(data)
+     console.log("getting data:"+data);
+    
 })
 
 app.post("/setheader",async (req,res)=>{
@@ -42,15 +53,17 @@ app.post("/setheader",async (req,res)=>{
 })
 
 app.put("/updateHeader/:id", async (req,res)=>{
-    console.log(req.body)
+    console.log("getting data"+req.body)
     let data= await dbCon('test')
-
+  
     await data.updateOne(
          {
             _id: ObjectId.ObjectId(req.params.id)
          },
          {
-            $set: {subject:req.body.subject}
+            $set: {nav:req.body.nav,
+                    submenu: req.body.submenu
+                    }
          }
     )
     res.send("data is updated")

@@ -18,9 +18,9 @@ const Form = () => {
 
 
         // for new input field
-        // const inputdata = [...fieldAdd]
-        // inputdata[i] = e.target.value;
-        // setFieldAdd(inputdata)
+        const inputdata = [...fieldAdd]
+        inputdata[i] = e.target.value;
+        setFieldAdd(inputdata)
 
         // console.log(fieldAdd, "data.");
     }
@@ -88,4 +88,4 @@ const Form = () => {
     )
 }
 
-// export default Form
+export default Form
