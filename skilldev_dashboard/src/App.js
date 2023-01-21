@@ -1,11 +1,12 @@
 import './App.css';
-import PopupForm from './component/PopupForm';
+// import PopupForm from './component/PopupForm';
+import Dashboard from './Dashboard';
 
 function App() {
   return (
     <div className="App">
-      {/* <Dashboard/> */}
-      <PopupForm />
+      <Dashboard/>
+      {/* <PopupForm /> */}
     </div>
   );
 }
