@@ -16,12 +16,10 @@ app.get("/getTest",async (req,res)=>{
       
 })
 
-app.get("/test/:id",(req,res)=>{
-     console.log("testing data"+req.params.id);
-     res.send("update");
-})
+
 
 app.post("/addNav", async (req,res)=>{
+     console.log("gittin data to add nav");
      let data= await new product(req.body);
      data = await data.save();
      res.send(data);
@@ -63,8 +61,9 @@ app.put("/addNavData/:id", async (req,res)=>{
 })
 
 app.delete("/deleteNav/:id", async (req,res)=>{
-     let data= await product.deleteOne({_id: mongoObj.ObjectId(id)});
+     let data= await product.deleteOne({_id: mongoObj.ObjectId(req.params.id)});
      res.send("data is deleted");
+     
 })
 
 app.get("/", (req,res)=>{
