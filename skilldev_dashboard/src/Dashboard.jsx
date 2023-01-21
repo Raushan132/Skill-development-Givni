@@ -5,6 +5,7 @@ import Sidebar from './component/Sidebar'
 import { Routes, Route } from 'react-router-dom'
 import EditNavDetails from './component/EditNavDetails'
 import NavPage from './pages/NavPage'
+import HomePage from './pages/HomePage'
 
 
 
@@ -17,7 +18,7 @@ const Dashboard = () => {
                     <Routes>
                         <Route path='/navpage' element={<NavPage />} />
                         <Route path='navpage/Edit/:_id' element={<EditNavDetails />} />
-
+                        <Route exact path='/' element={<HomePage />} />
                     </Routes>
 
                 </div>
