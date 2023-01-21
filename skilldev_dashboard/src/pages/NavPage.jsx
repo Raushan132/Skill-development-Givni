@@ -7,39 +7,7 @@ import HeadTitle from '../component/HeadTitle'
 
 const NavPages = () => {
 
-    // const NavData = [
 
-    //     {
-    //         _id: 12,
-    //         nav: 'Home',
-    //         submenu: [
-    //             {
-    //                 subnav: 'Home1'
-    //             },
-    //             {
-    //                 subnav: 'Home2'
-
-    //             }
-    //         ]
-    //     },
-    //     {
-    //         _id: 13,
-    //         nav: 'About',
-    //         submenu: [
-    //             {
-    //                 subnav: 'About1'
-    //             },
-    //             {
-    //                 subnav: 'About2'
-
-    //             },
-    //             {
-    //                 subnav: 'About3'
-
-    //             }
-    //         ]
-    //     }
-    // ]
 
 
 
@@ -48,7 +16,7 @@ const NavPages = () => {
 
 
     useEffect(() => {
-        axios.get('http://192.168.1.12:8082/getTest').then((result) => {
+        axios.get('http://192.168.1.21:8084/getTest').then((result) => {
             // console.log(result.data);
             setData(result.data);
         })
@@ -61,35 +29,39 @@ const NavPages = () => {
         <div className='flex text-center flex-col py-12 bg-blue-200 w-full'>
             <HeadTitle head="Nav" />
 
-            <div className='px-16 py-2 mt-10 mx-10 '>
+            <div className='px-16 py-2 mt-10 mx-10 flex flex-col '>
                 <Link className='flex justify-start'>
                     <button className='rounded-md bg-green-500 hover:bg-green-600 hover:scale-x-110 hover:duration-75 px-5 py-2 m-2 text-white' id="">
                         Add</button>
                 </Link>
 
-                <div>
+                <div class="grid md:grid-cols-3 grid-cols-1  gap-5 px-4 py-4">
                     {
 
                         data.map((navbar) => {
                             return (
-                                <div className='flex flex-col' key={navbar._id}>
-                                    <div className='flex flex-col-reverse'>
-                                        <Link to={"Edit/" + navbar._id} className=''> Edit </Link>
+                                <div className='flex flex-col bg-gray-300' key={navbar._id}>
+                                    <div className='flex flex-col gap-2'>
+                                        <div className='flex'>
+                                            <Link to={"Edit/" + navbar._id} className='rounded-md bg-red-500 hover:bg-green-600 hover:scale-x-110 hover:duration-75 px-5 py-2 m-2 text-white'> Edit </Link>
+                                        </div>
+                                        <div className=''>
+                                            <h3> {navbar.nav}</h3>
+
+                                            <ul className='pl-16 pb-12'>
+                                                {
+
+                                                    navbar.submenu?.map((child) => {
+                                                        return (
+                                                            <li>{child.subnav}</li>
+                                                        )
+                                                    })
+                                                }
+
+
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <h3>{navbar.nav}</h3>
-
-                                    <ul className='pl-12 pb-12'>
-                                        {
-
-                                            navbar.submenu?.map((child) => {
-                                                return (
-                                                    <li>{child.subnav}</li>
-                                                )
-                                            })
-                                        }
-
-
-                                    </ul>
                                 </div>
                             )
                         })
