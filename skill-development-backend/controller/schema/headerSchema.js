@@ -4,4 +4,4 @@ const headerSchema = new mongoose.Schema({
         submenu: Array
 })
 
-module.exports = mongoose.model("tests",headerSchema)
+module.exports = mongoose.model("headers",headerSchema)
