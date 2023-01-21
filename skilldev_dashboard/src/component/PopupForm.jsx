@@ -64,7 +64,7 @@ const PopupForm = () => {
             {/* popup */}
             {modal && (
                 <div>
-                    <div className='w-full max-w-xs my-40 mx-auto bg-red-100 shadow-xl rounded-md'>
+                    <div className='absolute top-10 left-1/2 w-full max-w-xs my-40 mx-auto bg-red-100 shadow-xl rounded-md'>
                         {/* close buton */}
                         <button onClick={toggleModal} className='text-md bg-red-100 text-gray-700 hover:text-red-500 hover:scale-90 hover:duration-75 py-3 px-3 rounded focus:outline-none focus:shadow-outline'> <ImCross /> </button>
                         <form className='px-8 pb-8' onSubmit={handleAdd}>

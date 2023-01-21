@@ -8,7 +8,7 @@ const Home = () => {
    const [HomeData, setData] = useState([]);
 
    useEffect(() => {
-       fetch('http://localhost:8081/api/home2')
+       fetch('http://192.168.1.21:8081/api/home2')
        .then(res => res.json())
        .then(json => setData(json));
    },[]);

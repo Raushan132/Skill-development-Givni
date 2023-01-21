@@ -7,13 +7,7 @@ import HeadTitle from '../component/HeadTitle'
 
 const NavPages = () => {
 
-
-
-
-
     const [data, setData] = useState([])
-
-
 
     useEffect(() => {
         axios.get('http://192.168.1.21:8084/getTest').then((result) => {
@@ -57,8 +51,6 @@ const NavPages = () => {
                                                         )
                                                     })
                                                 }
-
-
                                             </ul>
                                         </div>
                                     </div>
