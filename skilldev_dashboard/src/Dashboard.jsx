@@ -12,7 +12,7 @@ import HomePage from './pages/HomePage'
 const Dashboard = () => {
     return (
         <>
-            <div className='min-h-screen flex justify-center items-center px-24'>
+            <div className='min-h-screen flex  px-24'>
                 <div className='flex w-full gap-8'>
                     <Sidebar />
                     <Routes>
