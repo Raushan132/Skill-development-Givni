@@ -6,7 +6,7 @@ const Header = () => {
     const [Records, setData] = useState([]);
 
 useEffect(() => {
-    fetch('http://localhost:8081/api/header')
+    fetch('http://192.168.1.21:8083/api/header')
     .then(res => res.json())
     .then(json => setData(json));
 },[]);
