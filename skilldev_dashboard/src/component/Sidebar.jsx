@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   return (
 
-    <div className='h-screen flex text-white text-bold'>
+    <div className='h-screen flex text-white text-bold fixed'>
       <nav className='bg-red-200 flex items-start py-12 shadow-md relative'>
         <ul className=' flex flex-col gap-4'>
 
