@@ -60,7 +60,7 @@ const EditNavDetails = () => {
     try {
       await axios.put(`http://192.168.1.21:8084/updateData/${_id}`, navItem)
         .then(res => {
-          let msg = (res.data) ? <h1 className='bg-gray-200 text-green-900 px-4 py-2 font-bold'>Updated Sucessfully</h1> : "error";
+          let msg = (res.data) ? <h1 className='bg-gray-200 text-green-900 px-4 py-2 font-bold'> <span>🎊</span> Updated Sucessfully</h1> : "error";
           setUpdatemsg(msg);
           console.log("put", res.data, updatemsg)});
           setNavData(navData.map(item => item._id === _id ? navItem : item));
