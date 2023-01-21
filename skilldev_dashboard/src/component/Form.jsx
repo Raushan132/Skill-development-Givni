@@ -4,11 +4,8 @@ import { BiAddToQueue } from 'react-icons/bi';
 import { RxCross2 } from 'react-icons/rx';
 
 const Form = () => {
-
-    // sending data to this url
     const url = 'http://192.168.1.12:8081/setheader'
 
-    // adding data function
     const [data, setData] = useState({ menu: ''})
     const handleData = (e) => {
         const newData = { ...data }
@@ -18,9 +15,9 @@ const Form = () => {
 
 
         // for new input field
-        const inputdata = [...fieldAdd]
-        inputdata[i] = e.target.value;
-        setFieldAdd(inputdata)
+        // const inputdata = [...fieldAdd]
+        // inputdata[i] = e.target.value;
+        // setFieldAdd(inputdata)
 
         // console.log(fieldAdd, "data.");
     }
