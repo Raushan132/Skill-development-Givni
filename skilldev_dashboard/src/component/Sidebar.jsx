@@ -23,7 +23,7 @@ const Sidebar = () => {
 
           <NavLink className='flex items-center gap-2 cursor-pointer bg-red-400 px-6 py-2 hover:bg-red-600'><BiBookContent className='h-4' />Content</NavLink>
 
-          <NavLink className='flex items-center gap-2 cursor-pointer bg-red-400 px-6 py-2 hover:bg-red-600'><BsImageFill className='h-4' />Image</NavLink>
+          <NavLink to='/ImgPage' className='flex items-center gap-2 cursor-pointer bg-red-400 px-6 py-2 hover:bg-red-600'><BsImageFill className='h-4' />Image</NavLink>
 
         </ul>
         <div className='absolute w-48 h-48 bg-gray-200 opacity-70 bottom-12 rounded-full -left-8 border-8 border-red-400'></div>
