@@ -9,6 +9,9 @@ const app= express()
 app.use(cors())
 app.use(express.json())
 
+
+
+
 /**
  *  <p>sendind data form mongodb to rest api...</p>
  */
@@ -48,6 +51,7 @@ app.put("/updateData/:id", async (req,res)=>{
          {
             $set:{
                 "nav": req.body.nav,
+                "href": req.body.href,
                 submenu:req.body.submenu
             }
          }
@@ -80,6 +84,8 @@ app.delete("/deleteNav/:id", async (req,res)=>{
 })
 
 
+const imageServer= require("./imageController")
+imageServer(app);
 
 
 const server = app.listen(8084,function (){
