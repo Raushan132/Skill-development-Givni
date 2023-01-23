@@ -101,7 +101,7 @@ const Home = () => {
                </div> 
                      <div className="col-xl-6 col-lg-6 col-md-6">
                         <div className="tphero__thumb">
-                           <img src="assets/img/hero/hero-img-1.png" alt="" />
+                           <img src="../../../../assets/img/hero/hero-img-1.png" alt="" />
                         </div>
                      </div>
                   
@@ -154,7 +154,7 @@ const Home = () => {
                   <div className="row align-items-center">
                      <div className="col-xl-6 col-lg-6">
                         <div className="tpabout__thumb2">
-                           <img src="assets/img/about/about-2-1.png" alt="" />
+                           <img src="../../assets/img/about/about-2-1.png" alt="" />
                         </div>
                      </div>
                      <div className="col-xl-6 col-lg-6">
@@ -226,7 +226,7 @@ const Home = () => {
                               </div>
                               <div className="col-xl-6 col-lg-6">
                                  <div className="tpmission__thumb">
-                                    <img src="assets/img/mission/mission-1.jpg" alt="" />
+                                    <img src="../../assets/img/mission/mission-1.jpg" alt="" />
                                  </div>
                               </div>
                            </div>
@@ -251,7 +251,7 @@ const Home = () => {
                               </div>
                               <div className="col-xl-6">
                                  <div className="tpmission__thumb">
-                                    <img src="assets/img/mission/mission-2.jpg" alt="" />
+                                    <img src="../../assets/img/mission/mission-2.jpg" alt="" />
                                  </div>
                               </div>
                            </div>
@@ -276,7 +276,7 @@ const Home = () => {
                               </div>
                               <div className="col-xl-6">
                                  <div className="tpmission__thumb">
-                                    <img src="assets/img/mission/mission-3.jpg" alt="" />
+                                    <img src="../../assets/img/mission/mission-3.jpg" alt="" />
                                  </div>
                               </div>
                            </div>
@@ -300,7 +300,7 @@ const Home = () => {
                               </div>
                               <div className="col-xl-6">
                                  <div className="tpmission__thumb">
-                                    <img src="assets/img/mission/mission-4.jpg" alt="" />
+                                    <img src="../../assets/img/mission/mission-4.jpg" alt="" />
                                  </div>
                               </div>
                            </div>
@@ -334,7 +334,7 @@ const Home = () => {
                            <div className="sercviceinsurance__item">
                               <div className="sercviceinsurance__thumb">
                                  <div className="fix">
-                                    <img src="assets/img/service/sv-img-1.png" alt="" />
+                                    <img src="../../assets/img/service/sv-img-1.png" alt="" />
                                  </div>
                               </div>
                               <div className="sercviceinsurance__content z-index-4">
@@ -359,7 +359,7 @@ const Home = () => {
                            <div className="sercviceinsurance__item">
                               <div className="sercviceinsurance__thumb">
                                  <div className="fix">
-                                    <img src="assets/img/service/sv-img-2.png" alt="" />
+                                    <img src="../../assets/img/service/sv-img-2.png" alt="" />
                                  </div>
                               </div>
                               <div className="sercviceinsurance__content z-index-4">
@@ -384,7 +384,7 @@ const Home = () => {
                            <div className="sercviceinsurance__item">
                               <div className="sercviceinsurance__thumb">
                                  <div className="fix">
-                                    <img src="assets/img/service/sv-img-3.png" alt="" />
+                                    <img src="../../assets/img/service/sv-img-3.png" alt="" />
                                  </div>
                               </div>
                               <div className="sercviceinsurance__content z-index-4">
@@ -409,7 +409,7 @@ const Home = () => {
                            <div className="sercviceinsurance__item">
                               <div className="sercviceinsurance__thumb">
                                  <div className="fix">
-                                    <img src="assets/img/service/sv-img-4.png" alt="" />
+                                    <img src="../../assets/img/service/sv-img-4.png" alt="" />
                                  </div>
                               </div>
                               <div className="sercviceinsurance__content z-index-4">
@@ -434,7 +434,7 @@ const Home = () => {
                            <div className="sercviceinsurance__item">
                               <div className="sercviceinsurance__thumb">
                                  <div className="fix">
-                                    <img src="assets/img/service/sv-img-5.png" alt="" />
+                                    <img src="../../assets/img/service/sv-img-5.png" alt="" />
                                  </div>
                               </div>
                               <div className="sercviceinsurance__content z-index-4">
@@ -459,7 +459,7 @@ const Home = () => {
                            <div className="sercviceinsurance__item">
                               <div className="sercviceinsurance__thumb">
                                  <div className="fix">
-                                    <img src="assets/img/service/sv-img-6.png" alt="" />
+                                    <img src="../../assets/img/service/sv-img-6.png" alt="" />
                                  </div>
                               </div>
                               <div className="sercviceinsurance__content z-index-4">
@@ -855,7 +855,7 @@ const Home = () => {
                      <div className="col-xl-6 col-12">
                         <div className="latestnews d-flex align-items-center mb-30">
                            <div className="latestnews__thumb fix">
-                              <a href="blog-details.html"><img src="assets/img/blog/blog-2-1.jpg" alt="" /></a>
+                              <a href="blog-details.html"><img src="../../assets/img/blog/blog-2-1.jpg" alt="" /></a>
                            </div>
                            <div className="latestnews__content">
                               <div className="latestnews__content-meta d-flex align-items-center pb-20">
@@ -872,7 +872,7 @@ const Home = () => {
                      <div className="col-xl-6 col-12">
                         <div className="latestnews latest-border-color-2 d-flex align-items-center mb-30">
                            <div className="latestnews__thumb fix">
-                              <a href="blog-details.html"><img src="assets/img/blog/blog-2-2.jpg" alt="" /></a>
+                              <a href="blog-details.html"><img src="../../assets/img/blog/blog-2-2.jpg" alt="" /></a>
                            </div>
                            <div className="latestnews__content">
                               <div className="latestnews__content-meta d-flex align-items-center pb-20">
@@ -889,7 +889,7 @@ const Home = () => {
                      <div className="col-xl-6 col-12">
                         <div className="latestnews latest-border-color-3 d-flex align-items-center mb-30">
                            <div className="latestnews__thumb fix">
-                              <a href="blog-details.html"><img src="assets/img/blog/blog-2-3.jpg" alt="" /></a>
+                              <a href="blog-details.html"><img src="../../assets/img/blog/blog-2-3.jpg" alt="" /></a>
                            </div>
                            <div className="latestnews__content">
                               <div className="latestnews__content-meta d-flex align-items-center pb-20">
@@ -907,7 +907,7 @@ const Home = () => {
                      <div className="col-xl-6 col-12">
                         <div className="latestnews latest-border-color-4 d-flex align-items-center mb-30">
                            <div className="latestnews__thumb fix">
-                              <a href="blog-details.html"><img src="assets/img/blog/blog-2-4.jpg" alt="" /></a>
+                              <a href="blog-details.html"><img src="../../assets/img/blog/blog-2-4.jpg" alt="" /></a>
                            </div>
                            <div className="latestnews__content">
                               <div className="latestnews__content-meta d-flex align-items-center pb-20">
