@@ -5,20 +5,20 @@ const Header = () => {
 
     const [Records, setData] = useState([]);
 
-useEffect(() => {
-    fetch('http://192.168.1.21:8083/api/header')
-    .then(res => res.json())
-    .then(json => setData(json));
-},[]);
-    console.log(Records.map(data1=>{
+    useEffect(() => {
+        fetch('http://192.168.1.19:8083/api/header')
+            .then(res => res.json())
+            .then(json => setData(json));
+    }, []);
+    console.log(Records.map(data1 => {
         return data1;
     }));
 
-        
-  
 
 
-    
+
+
+
     return (
         <>
             <header>
@@ -35,55 +35,22 @@ useEffect(() => {
                                 <div className="tp-main-menu tp-black-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            {Records.map((record)=>{
+                                            {Records.map((record) => {
                                                 return (
-                                                    <li className="hasdropdown"><a href="index.html">{record.nav}</a>
-                                                     <ul className="submenu">
-                                                        {record.submenu && record.submenu.map(data=>{
-                                                            return (
-                                                                <li><a href="index.html">{data.subnav}</a></li>
-                                                            );
-                                                        })}
-                                                     </ul>
-                                                    
+                                                    <li className={`${(record.submenu.length)>0 ? "hasdropdown" : ""}`}>
+                                                        <a href="index.html">{record.nav}</a>
+                                                        <ul className={`${(record.submenu.length)>0 ? "submenu" : ""}`} >
+                                                            {record.submenu && record.submenu.map(data => {
+                                                                return (
+                                                                    <li><a href={data.href}>{data.subnav}</a></li>
+                                                                );
+                                                            })}
+                                                        </ul>
+
                                                     </li>
                                                 );
                                             })}
-                                            {/* <li className="hasdropdown"><a href="index.html">Home</a>
-                                                <ul className="submenu">
-                                                    <li><a href="index.html">Home 01</a></li>
-                                                    <li><a href="index-2.html">Home 02</a></li>
-                                                    <li><a href="index-3.html">Home 03</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="hasdropdown"><a href="#">Pages</a>
-                                                <ul className="submenu">
-                                                    <li><a href="about-us.html">About Us</a></li>
-                                                    <li><a href="team.html">Team</a></li>
-                                                    <li><a href="team-details.html">Team Details</a></li>
-                                                    <li><a href="price.html">Price</a></li>
-                                                    <li><a href="faq.html">Faq</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="hasdropdown"><a href="service-details.html">Service</a>
-                                                <ul className="submenu">
-                                                    <li><a href="service-details.html">Services</a></li>
-                                                    <li><a href="service-details.html">Service Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="hasdropdown"><a href="portfolio-details.html">Portfolio</a>
-                                                <ul className="submenu">
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="hasdropdown"><a href="blog-details.html">Blog</a>
-                                                <ul className="submenu">
-                                                    <li><a href="blog.html">Blog Sidebar</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
-                                            </li> */}
+                                            
                                         </ul>
                                     </nav>
                                 </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import HeadTitle from '../component/HeadTitle'
-
+import PopupForm from '../component/PopupForm'
 
 
 const NavPages = () => {
@@ -10,7 +10,7 @@ const NavPages = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://192.168.1.21:8084/getTest').then((result) => {
+        axios.get('http://192.168.1.19:8084/getTest').then((result) => {
             // console.log(result.data);
             setData(result.data);
         })
@@ -20,16 +20,17 @@ const NavPages = () => {
 
     // console.log(data)
     return (
-        <div className='flex text-center flex-col py-12 bg-blue-200 w-full ml-28'>
+        <div className='w-[1100px] min-h-screen'>
+        <div className='flex text-center flex-col my-12'>
             <HeadTitle head="Nav" />
-
+            <PopupForm />
             <div className='px-16 py-2 mt-10 mx-10 flex flex-col '>
                 <Link className='flex justify-start'>
-                    <button className='rounded-md bg-green-500 hover:bg-green-600 hover:scale-x-110 hover:duration-75 px-5 py-2 m-2 text-white' id="">
-                        Add</button>
+                    {/* <button className='rounded-md bg-green-500 hover:bg-green-600 hover:scale-x-110 hover:duration-75 px-5 py-2 m-2 text-white' id="">
+                        Add</button> */}
                 </Link>
 
-                <div class="grid md:grid-cols-3 grid-cols-1  gap-5 px-4 py-4">
+                <div class="grid md:grid-cols-3 grid-cols-1  gap-5 px-4 py-8">
                     {
 
                         data.map((navbar) => {
@@ -47,7 +48,10 @@ const NavPages = () => {
 
                                                     navbar.submenu?.map((child) => {
                                                         return (
+                                                            <>
                                                             <li className='text-white bg-gradient-to-r from-indigo-500 px-2'>{child.subnav}</li>
+                                                            {/* <li className='text-white bg-gradient-to-r from-indigo-500 px-2'>{child.subnav}</li> */}
+                                                            </>
                                                         )
                                                     })
                                                 }
@@ -64,7 +68,11 @@ const NavPages = () => {
 
 
             </div>
+
+
         </div>
+      {/* <PopupForm /> */}
+      </div>
     )
 }
 

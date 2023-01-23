@@ -15,12 +15,13 @@ const Dashboard = () => {
             <div className='min-h-screen flex  px-24'>
                 <div className='flex w-full gap-8'>
                     <Sidebar />
+                    <div className='ml-28'>
                     <Routes>
                         <Route path='/navpage' element={<NavPage />} />
                         <Route path='navpage/Edit/:_id' element={<EditNavDetails />} />
                         <Route exact path='/' element={<HomePage />} />
                     </Routes>
-
+                    </div>
                 </div>
             </div>
         </>
