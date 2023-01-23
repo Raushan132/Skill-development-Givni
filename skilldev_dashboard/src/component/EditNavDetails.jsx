@@ -26,7 +26,7 @@ const EditNavDetails = () => {
 
 
   useEffect(() => {
-    axios.get('http://192.168.1.21:8084/getTest').then((result) => {
+    axios.get('http://192.168.1.19:8084/getTest').then((result) => {
       console.log("data from getheader", result.data);
       setNavData(result.data);
     })
@@ -58,7 +58,7 @@ const EditNavDetails = () => {
 
     e.preventDefault();
     try {
-      await axios.put(`http://192.168.1.21:8084/updateData/${_id}`, navItem)
+      await axios.put(`http://192.168.1.19:8084/updateData/${_id}`, navItem)
         .then(res => {
           let msg = (res.data) ? <h1 className='bg-gray-200 text-green-800 px-4 py-2 font-bold'> <span className='animate-spin scale-150'>🎊</span> Updated Sucessfully</h1> : "error";
           setUpdatemsg(msg);
@@ -75,7 +75,7 @@ const EditNavDetails = () => {
 
     e.preventDefault();
     try {
-      await axios.delete(`http://192.168.1.21:8084/deletenav/${_id}`, navItem)
+      await axios.delete(`http://192.168.1.19:8084/deletenav/${_id}`, navItem)
         .then(res => { 
           let test = (res.data)? navigate("/navPage"):"false";
           console.log("delete", res.data, test)
@@ -115,6 +115,19 @@ const EditNavDetails = () => {
             ...navItem,
             nav: e.target.value
           })} /> </li>
+
+          {
+          
+          (navItem.submenu) && (navItem.submenu['length'] === 0)  && 
+          (<li><input  onFocus={()=>setUpdatemsg("Want to change Nav Href...")}   className='px-2 py-1' type="text" value={navItem.href} onChange={(e) => setNavItem({
+            ...navItem,
+            href: e.target.value
+          })} /> </li>)
+          
+          }
+
+          {/* {console.log("submenu",navItem.submenu && navItem.submenu['length'])} */}
+
         </ul>
         {navItem.submenu && navItem.submenu.map((subnav, index) => (
 
@@ -124,12 +137,15 @@ const EditNavDetails = () => {
               <label>Subnav {index + 1}:</label>
               <div className='flex gap-4 items-center'>
                 <input onFocus={()=>setUpdatemsg(`Want to change Subnav ${index+1}... 😮‍💨`)}  className='px-2 py-1'  type="text" value={subnav.subnav} onChange={(e) => setNavItem({ ...navItem, submenu: navItem.submenu.map((sub, i) => i === index ? { ...sub, subnav: e.target.value } : sub) })} />
+                <input onFocus={()=>setUpdatemsg(`Want to change href ${index+1}... 😮‍💨`)}  className='px-2 py-1'  type="text" value={subnav.href} onChange={(e) => setNavItem({ ...navItem, submenu: navItem.submenu.map((sub, i) => i === index ? { ...sub, href: e.target.value } : sub) })} />
+                
                 <button onPointerEnter={console.log("removingg")} className='bg-red-400 px-4 py-2 hover:bg-red-600 hover:text-white' onClick={() => removeSubnav(index)}>Remove</button>
               </div>
             </ul>
 
           </div>
         ))}
+
         <div className='flex justify-center gap-12'>
         <button className='bg-green-400 px-4 py-2 hover:bg-green-600' onClick={addSubnav}>Add Subnav</button>
         <button className='bg-green-400 px-4 py-2 hover:bg-green-600' type="submit"> Update </button>
