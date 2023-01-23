@@ -16,7 +16,7 @@ const UpdateImage = () => {
 
     return (
         <>
-            <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center gap-5'>
+            <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-5 ml-16'>
 
                 {data.map(images => {
                     return (
@@ -25,6 +25,7 @@ const UpdateImage = () => {
                             <div className='h-52 w-72 group relative items-center justify-center overflow-hidden cursor-pointer '>
                                 <div className='h-52 w-72'>
                                     <input type="hidden" value={images._id} />
+                                    <p>{images.alt}</p>
                                     <img src={"../../assets/img" + images.img} alt={images.alt} className='rounded-md h-full w-full object-cover' />
                                 </div>
 
