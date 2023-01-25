@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import Image from '../images/UpdateImage.jpg';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const UpdateImage = () => {
 
@@ -30,7 +31,7 @@ const UpdateImage = () => {
                                 </div>
 
                                 <div className='relative inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[100%] group-hover:-translate-y-32 transition-all ease-in-out'>
-                                    <button className=' h-16 w-16 bg-cyan-500 text-white font-bold rounded-full focus:outline-none focus:shadow-outline hover:scale-105 hover:duration-75 shadow-2xl scale-75 duration-150'>Edit</button>
+                                    <Link to={"Edit/"+images._id} className=' h-16 w-16 bg-cyan-500 text-white font-bold rounded-full focus:outline-none focus:shadow-outline hover:scale-105 hover:duration-75 shadow-2xl scale-75 duration-150'>Edit</Link>
                                 </div>
                             </div>
 
