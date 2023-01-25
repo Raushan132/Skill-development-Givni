@@ -7,6 +7,7 @@ import EditNavDetails from './component/EditNavDetails'
 import NavPage from './pages/NavPage'
 import HomePage from './pages/HomePage'
 import UpdateImage from './component/UpdateImage';
+import UpdateImageForm from './component/UpdateImageForm'
 
 // import PopupForm from './component/PopupForm'
 
@@ -27,7 +28,7 @@ const Dashboard = () => {
                         <Route path='navpage/Edit/:_id' element={<EditNavDetails />} />
                         <Route exact path='/' element={<HomePage />} />
                         <Route exact path='/ImgPage' element={<UpdateImage/>} />
-                        
+                        <Route exact path='/ImgPage/Edit/:_id' element={<UpdateImageForm/>} />
 
                     </Routes>
                     </div>
