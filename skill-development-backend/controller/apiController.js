@@ -19,6 +19,14 @@ app.get("/api/header",async (req, res)=>{
 })
 
 
+// send content data using api....
+app.get("/api/home2",async (req,res)=>{
+    let HomeData= await dbCon('HomeData');
+     let record= await HomeData.find().toArray();
+
+    res.json(record);
+})
+
 
 
 
