@@ -25,14 +25,15 @@ const upload = multer({
             let filename=data.map(result=>{return result.alt})
             console.log(filename[0])
             cb(null,filename[0])
-            console.log("already execute")
+           
           }
 
           
     }),
     fileFilter: function(req, file,cb){
          if(!whitelist.includes(file.mimetype)){
-                   return cb( new Error('image only'))
+                
+                   return cb("false")
 
          }
          cb(null,true)
@@ -54,7 +55,7 @@ module.exports =function(app){
 
     app.post("/uploadImage/:id",upload,(req,res)=>{
         console.log(req.body)
-         res.send("upload")
+        //  res.send("upload")
     })
 
 
